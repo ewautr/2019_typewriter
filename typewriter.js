@@ -17,6 +17,7 @@ const typeReturn = document.getElementById("typereturn");
 
 function typeText() {
   if (i < text.length) {
+    //SETTING UP SOUNDS
     if (text.charCodeAt(i) == 32) {
       typeSpace.play();
     } else if (i == text.length - 1) {
@@ -27,10 +28,12 @@ function typeText() {
       typeKey2.play();
     }
 
+    //DISPLAY CHARACTERS
     container.textContent += text[i];
     i++;
     setTimeout(typeText, 500);
   } else {
+    //FINISHING SOUND
     typeReturn.play();
   }
 }
