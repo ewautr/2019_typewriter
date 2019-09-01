@@ -3,6 +3,7 @@
 //VARIABLES
 const container = document.querySelector("#typewriter");
 const text = container.textContent.trim();
+const button = document.querySelector("button");
 
 //SETUP
 container.innerHTML = "";
@@ -17,6 +18,8 @@ const typeReturn = document.getElementById("typereturn");
 
 function typeText() {
   if (i < text.length) {
+    button.classList.add("clicked");
+
     //SETTING UP SOUNDS
     if (text.charCodeAt(i) == 32) {
       typeSpace.play();
@@ -38,4 +41,4 @@ function typeText() {
   }
 }
 
-typeText();
+button.addEventListener("click", typeText);
